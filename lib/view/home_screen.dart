@@ -13,17 +13,31 @@ class _HomeScreenState extends State<HomeScreen> {
   SharedPreferences? prefs;
 
   String sValue = "";
-
+  bool? bValue;
+  int? iValue;
+  double? dValue;
+  List<String> lValue = [""];
   setInstance() async {
     prefs = await SharedPreferences.getInstance();
   }
 
   setData() {
-    prefs!.setString('s_value', "123456789");
+    prefs!.setString('s_value', "JEET RABADIYA");
+    prefs!.setBool('b_value', false);
+    prefs!.setInt('i_value', 12);
+    prefs!.setDouble('d_value', 0222521);
+    prefs!.setStringList(
+      'textList',
+      ["hiii", "Byyyy", "TATA", "Thank you"],
+    );
   }
 
   getData() {
     sValue = prefs!.getString('s_value')!;
+    bValue = prefs!.getBool('b_value')!;
+    iValue = prefs!.getInt('i_value')!;
+    dValue = prefs!.getDouble('d_value')!;
+    lValue = prefs!.getStringList('textList')!;
     setState(() {});
   }
 
@@ -36,9 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double screenHeight = size.height;
-    double screenWidth = size.width;
+    // Size size = MediaQuery.of(context).size;
+    // double screenHeight = size.height;
+    // double screenWidth = size.width;
     return Scaffold(
       body: Center(
         child: Column(
@@ -46,6 +60,34 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               "String value : $sValue",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "Bool value : $bValue",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "int value : $iValue",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "double value : $dValue",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "List value : $lValue",
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
