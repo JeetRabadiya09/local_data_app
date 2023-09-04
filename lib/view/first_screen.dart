@@ -19,7 +19,7 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   setData() {
-    prefs!.setStringList('listValue', ["hiii", "Byyyy", "TATA", "Thank you"]);
+    prefs!.setStringList('listValue', ["hiii", "Hello", "Thank you"]);
   }
 
   @override

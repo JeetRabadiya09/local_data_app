@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     prefs!.setDouble('d_value', 0222521);
     prefs!.setStringList(
       'textList',
-      ["hiii", "Byyyy", "TATA", "Thank you"],
+      ["hiii", "Hello", "Thank you"],
     );
   }
 
